@@ -123,10 +123,12 @@ function LinkedList() {
   this.print = function() {};
 }
 
-let list = new LinkedList();
-list.append(5);
-list.append(10);
-list.insert(0, 55);
-list.removeAt(2);
-console.log(list.toString());
-console.log(list.size());
+// let list = new LinkedList();
+// list.append(5);
+// list.append(10);
+// list.insert(0, 55);
+// list.removeAt(2);
+// console.log(list.toString());
+// console.log(list.size());
+
+module.exports = LinkedList;

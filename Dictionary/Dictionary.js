@@ -51,13 +51,15 @@ function Dictionary() {
   };
 }
 
-let dictionary = new Dictionary();
-dictionary.set('Gandalf', 'gandalf@mail.com');
-dictionary.set('John', 'john@mail.com');
-dictionary.set('Tyrion', 'tyrion@mail.com');
-console.log(dictionary.has('Gandalf')); // true
-console.log(dictionary.size()); // 3
-console.log(dictionary.keys()); // ['Gandalf', 'John', 'Tyrion']
-console.log(dictionary.getItems()); // Object {Gandalf: 'gandalf@mail.com', ... }
-dictionary.delete('John');
-console.log(dictionary.getItems());
+// let dictionary = new Dictionary();
+// dictionary.set('Gandalf', 'gandalf@mail.com');
+// dictionary.set('John', 'john@mail.com');
+// dictionary.set('Tyrion', 'tyrion@mail.com');
+// console.log(dictionary.has('Gandalf')); // true
+// console.log(dictionary.size()); // 3
+// console.log(dictionary.keys()); // ['Gandalf', 'John', 'Tyrion']
+// console.log(dictionary.getItems()); // Object {Gandalf: 'gandalf@mail.com', ... }
+// dictionary.delete('John');
+// console.log(dictionary.getItems());
+
+module.exports = Dictionary;
