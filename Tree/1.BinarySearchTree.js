@@ -33,13 +33,10 @@ function BinarySearchTree() {
         }
     };
 
-    this.getRoot = () => root;
-
-    const searchNode = (node, key) => {
-
-    }
-
-    this.search = key => searchNode(root, key);
+    // in-order traversal (from smallest to largest node)
+    this.inOrderTraverse = callback => {
+        inOrderTraverseNode(root, callback);
+    };
 
     const inOrderTraverseNode = (node, callback) => {
         if (node !== null) {
@@ -47,11 +44,6 @@ function BinarySearchTree() {
             callback(node.key);
             inOrderTraverseNode(node.right, callback);
         }
-    };
-
-    // in-order traversal (from smallest to largest node)
-    this.inOrderTraverse = callback => {
-        inOrderTraverseNode(root, callback);
     };
 
     // pre-order traversal (starts from ROOT, then LEFT down to last node, then RIGHT)
@@ -67,6 +59,63 @@ function BinarySearchTree() {
         }
     };
 
+    this.postOrderTraverse = callback => {
+        postOrderTraverseNode(root, callback);
+    }
+
+    const postOrderTraverseNode = (node, callback) => {
+        if (node !== null) {
+            postOrderTraverseNode(node.left, callback);
+            postOrderTraverseNode(node.right, callback);
+            callback(node.key);
+        }
+    };
+
+    this.min = () => minNode(root);
+
+    const minNode = node => {
+        if (node) {
+            while (node && node.left !== null) {
+                node = node.left;
+            }
+
+            return node.key;
+        }
+
+        return null;
+    };
+
+    this.max = () => maxNode(root);
+
+    const maxNode = node => {
+        if (node) {
+            while (node && node.right !== null) {
+                node = node.right;
+            }
+
+            return node.key;
+        }
+
+        return null;
+    };
+
+    this.search = key => searchNode(root, key);
+
+    const searchNode = (node, key) => {
+        if (node === null) {
+            return false;
+        }
+
+        if (key < node.key) {
+            return searchNode(node.left, key);
+        } else if (key > node.key) {
+            return searchNode(node.right, key);
+        } else {
+            return true;
+        }
+    };
+
+    this.getRoot = () => root;
 }
 
 

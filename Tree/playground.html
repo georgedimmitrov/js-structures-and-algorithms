@@ -34,8 +34,14 @@
             // tree.inOrderTraverse(printNode);
             // debugger;
             // tree.preOrderTraverse(printNode);
-            tree.preOrderTraverse(addToStringOfTreeValues);
+            // tree.preOrderTraverse(addToStringOfTreeValues);
+            tree.postOrderTraverse(addToStringOfTreeValues);
             console.log(treeValues);
+
+            console.log(tree.min());
+            console.log(tree.max());
+            console.log(tree.search(1) ? 'Key 1 Found' : 'Key 1 NOT Found');
+            console.log(tree.search(8) ? 'Key 8 Found' : 'Key 1 NOT Found');
 
         </script>
     </body>
