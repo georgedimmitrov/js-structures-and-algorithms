@@ -25,6 +25,7 @@
   [1] | [5] [3] | [9] [4] | [8]
  */
 
+// take in a single, unsorted array as a parameter and split it into halves
 // Split arrays into halves and merge them recursively
 function mergeSort(array) {
   if (array.length === 1) {
@@ -41,6 +42,7 @@ function mergeSort(array) {
   );
 }
 
+// takes in two sorted arrays as parameters and merges them into one sorted array and returns it
 // compare the arrays item by item and return the concatenated result
 function merge(left, right) {
   let result = [];
@@ -62,3 +64,47 @@ function merge(left, right) {
 
 const list = [2, 5, 1, 3, 7, 2, 3, 8, 6, 3];
 console.log(mergeSort(list)); // [ 1, 2, 2, 3, 3, 3, 5, 6, 7, 8 ]
+
+
+function mergeSort2(array) {
+  if (array.length < 2) {
+    return array;
+  }
+
+  const middleIndex = Math.floor(array.length / 2);
+  const firstHalf = array.slice(0, middleIndex);
+  const secondHalf = array.slice(middleIndex);
+
+  return merge2(mergeSort2(firstHalf), mergeSort2(secondHalf));
+}
+
+function merge2(array1, array2) {
+  let result = [];
+
+  while (array1.length && array2.length) {
+    let minElem;
+    if (array1[0] < array2[0]) {
+      minElem = array1.shift();
+    } else {
+      minElem = array2.shift();
+    }
+
+    result.push(minElem);
+  }
+
+  if (array1.length) {
+    result = result.concat(array1);
+  } else {
+    result = result.concat(array2);
+  }
+
+  return result;
+}
+console.log(
+  mergeSort2([6000, 34, 203, 3, 746, 200, 984, 198, 764, 1, 9, 1])
+);
+
+console.log(
+  mergeSort2([100, -20, 40, -30, 16, -100, -101, -101])
+);
+
