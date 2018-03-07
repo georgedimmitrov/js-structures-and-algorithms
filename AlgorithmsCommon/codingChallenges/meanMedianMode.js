@@ -64,5 +64,6 @@ function getMode(array) {
   return modes;
 }
 
-console.log(meanMedianMode([3, 4, 2, 3, 6, 4, 1]));
+// console.log(meanMedianMode([3, 4, 2, 3, 6, 4, 1]));
+console.log(meanMedianMode([9, 10, 23, 10, 23, 9]));
 

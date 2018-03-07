@@ -10,20 +10,21 @@
 function harmlessRansomNote(noteText, magazineText) {
   const noteArr = noteText.split(' ');
   const magazineArr = magazineText.split(' ');
-  const magazine = {};
+  const magazineObj = {};
 
-  magazineArr.forEach(word => {
-    if (!magazine[word]) {
-      magazine[word] = 0;
+  magazineArr.forEach((word) => {
+    if (!magazineObj[word]) {
+      magazineObj[word] = 0;
     }
-    magazine[word]++;
+    magazineObj[word]++;
   });
 
   let noteIsPossible = true;
-  noteArr.forEach(word => {
-    if (magazine[word]) {
-      magazine[word]--;
-      if (magazine[word] < 0) {
+  noteArr.forEach((word) => {
+    if (magazineObj[word]) {
+      magazineObj[word]--;
+
+      if (magazineObj[word] < 0) {
         noteIsPossible = false;
       }
     } else {

@@ -9,8 +9,10 @@ function fibonacci(position) {
   return fibonacci(position - 1) + fibonacci(position - 2);
 }
 
-console.log(fibonacci(9)); // 34
-console.log(fibonacci(6)); // 8
+// console.log(fibonacci(5));
+
+// console.log(fibonacci(9)); // 34
+// console.log(fibonacci(6)); // 8
 console.log(fibonacci(12)); // 144
-console.log(fibonacci(20)); // 6765
-console.log(fibonacci(50)); // ????
+// console.log(fibonacci(20)); // 6765
+// console.log(fibonacci(50)); // ????

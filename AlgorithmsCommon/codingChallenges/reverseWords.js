@@ -4,11 +4,12 @@ function reverseWords(string) {
   const wordsArr = string.split(' ');
   let reversedExpression = '';
 
-  wordsArr.forEach(word => {
+  wordsArr.forEach((word) => {
     for (let i = word.length - 1; i >= 0; i--) {
       reversedExpression += word[i];
     }
-    reversedExpression += ' ';
+
+    reversedExpression += ' '
   });
 
   return reversedExpression;
@@ -18,12 +19,13 @@ function reverseWordsUsingArray(string) {
   const wordsArr = string.split(' ');
   let reversedWordsArr = [];
 
-  wordsArr.forEach(word => {
+  wordsArr.forEach((word) => {
     let reversedWord = '';
-    for (let i = word.length - 1; i >= 0; i--) {
+
+    for (i = word.length - 1; i >= 0; i--) {
       reversedWord += word[i];
     }
-    
+
     reversedWordsArr.push(reversedWord);
   });
 

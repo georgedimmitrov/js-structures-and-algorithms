@@ -15,7 +15,7 @@ function binarySearch(numArray, key) {
 }
 
 let arrayFrom0to100 = [];
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i <= 100; i++) {
   arrayFrom0to100.push(i);
 }
 

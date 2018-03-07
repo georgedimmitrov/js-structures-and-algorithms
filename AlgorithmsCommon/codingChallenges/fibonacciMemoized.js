@@ -16,6 +16,6 @@ function fibMemo(index, cache = []) {
   return cache[index];
 }
 
-console.log(fibMemo(20)); // 144
+console.log(fibMemo(12)); // 144
 console.log(fibMemo(50)); // 12586269025
 console.log(fibMemo(1000)); // 4.346655768693743e+208
