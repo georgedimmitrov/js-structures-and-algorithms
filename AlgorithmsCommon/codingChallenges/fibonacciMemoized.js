@@ -7,8 +7,8 @@ function fibMemo(index, cache = []) {
     return cache[index];
   }
 
-  if (index < 3) {
-    return 1;
+  if (index < 2) {
+    return index;
   } else {
     cache[index] = fibMemo(index - 1, cache) + fibMemo(index - 2, cache);
   }
